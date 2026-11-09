@@ -1,0 +1,20 @@
+/* 設計 token、全域重置 */
+/* Layout: fixed WebGL stage (the statue turns and the camera dollies in per chapter) behind eight full-height scroll files; cards dock bottom, alternating sides; a chapter rail runs down the right edge. Single dark look by design. */
+:root{
+  --void:#070809;
+  --ink:#ece4d8;
+  --dim:#9a8e80;
+  --amber:#ff8a3d;
+  --teal:#43f0e2;
+  --pink:#ff3f8e;
+  --lantern:#ff3b2a;
+  --rule:rgba(255,138,61,.28);
+  --panel:rgba(6,7,8,.72);
+  --f-display:"Syncopate","Noto Sans TC",system-ui,sans-serif;
+  --f-cjk:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:dark;
+}
+html{background:var(--void)}
+body{background:var(--void);color:var(--ink);font-family:var(--f-cjk);font-weight:300;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html,body{margin:0;padding:0}

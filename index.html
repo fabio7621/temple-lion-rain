@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>廟口石獅 雨夜</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@200;300;500;700&family=Syncopate:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/stage.css">
+<link rel="stylesheet" href="css/hud.css">
+<link rel="stylesheet" href="css/panels.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+
+<canvas id="stage" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="boot" id="boot" aria-hidden="true"><p><span class="zh">石獅掃描中</span><span class="bar"><i id="bootBar"></i></span><span id="bootPct">0%</span></p></div>
+
+<header class="hud top">
+  <div class="brand"><b>石獅</b><span>TW·GUARDIAN 廟口石獅檔案</span></div>
+</header>
+
+<nav aria-label="章節">
+  <ul class="rail" id="rail">
+    <li><button type="button" data-go="0" aria-current="true"><span class="en">Guardian</span><span class="zh">守門</span><span class="tick"></span></button></li>
+    <li><button type="button" data-go="1"><span class="en">Pearl</span><span class="zh">含珠</span><span class="tick"></span></button></li>
+    <li><button type="button" data-go="2"><span class="en">Bell</span><span class="zh">項鈴</span><span class="tick"></span></button></li>
+    <li><button type="button" data-go="3"><span class="en">Ball</span><span class="zh">繡球</span><span class="tick"></span></button></li>
+    <li><button type="button" data-go="4"><span class="en">Mane</span><span class="zh">捲鬃</span><span class="tick"></span></button></li>
+    <li><button type="button" data-go="5"><span class="en">Tail</span><span class="zh">獅尾</span><span class="tick"></span></button></li>
+    <li><button type="button" data-go="6"><span class="en">Plinth</span><span class="zh">石座</span><span class="tick"></span></button></li>
+    <li><button type="button" data-go="7"><span class="en">Pair</span><span class="zh">成對</span><span class="tick"></span></button></li>
+  </ul>
+</nav>
+
+<div class="reticle" id="reticle" aria-hidden="true">
+  <div class="box"><i></i><i></i><i></i><i></i></div><div class="dot"></div><div class="lead"></div>
+  <div class="tag"><b id="retZh"></b><span id="retEn"></span></div>
+</div>
+
+<button class="sound" id="soundBtn" type="button" aria-pressed="false" aria-label="聲音開關"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="zh">聲音</span><span class="state">OFF</span></button>
+
+<main>
+  <section class="file" data-side="left">
+    <div class="panel">
+      <button class="fold" type="button" aria-expanded="true">收合</button>
+      <p class="eyebrow"><span>TEMPLE GUARDIAN</span><span>廟埕 · 雨夜</span></p>
+      <h1><span class="glitch" data-text="廟口石獅">廟口石獅</span></h1>
+      <div class="more">
+      <p class="lede">走進廟埕，最先迎上來的，常常是門口這對石獅。牠們是替廟守門的護法。</p>
+      <p class="body">獅子不是中國原產。漢代時，西域諸國把獅子當作貢品送進宮廷，之後牠隨著佛教成為護法的象徵，從佛像身旁一路走到廟門口。台灣常見的是明末清初從閩、粵傳來的<strong>南獅</strong>，比起北方石獅的端莊壯碩，表情和姿態都更活潑。</p>
+      <dl class="spec">
+        <dt>來源</dt><dd>明末清初由閩、粵傳入台灣</dd>
+        <dt>風格</dt><dd>南獅，張口、捲鬃、裝飾多</dd>
+        <dt>台南</dt><dd>茅港尾天后宮的一對，相傳可能是台灣最老的石獅（1677）</dd>
+      </dl>
+      <p class="scroll-cue">往下捲，牠會轉過來</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="file" data-side="left" data-mark="石珠" data-mark-en="PEARL">
+    <div class="panel">
+      <button class="fold" type="button" aria-expanded="true">收合</button>
+      <p class="eyebrow"><span>MOUTH · PEARL</span><span>獅口</span></p>
+      <h2><span class="glitch" data-text="口中含珠">口中含珠</span></h2>
+      <div class="more">
+      <p class="lede">張大的嘴裡含著一顆石珠。它不是後來放進去的，而是跟獅頭用同一塊石頭雕出來的。</p>
+      <p class="body">石匠在嘴裡先留下一塊石料，再從牙縫間一點一點把它鑿圓。完成的石珠能在口中滾動，卻比牙縫還大，<strong>怎麼樣都拿不出來</strong>。這是整隻石獅最考驗手藝的地方。</p>
+      <dl class="spec">
+        <dt>做法</dt><dd>原石留料，口內鑿圓</dd>
+        <dt>特色</dt><dd>可以滾動，取不出來</dd>
+        <dt>成對時</dt><dd>常見一隻開口、一隻閉口</dd>
+      </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="file" data-side="right" data-mark="項鈴" data-mark-en="BELL">
+    <div class="panel">
+      <button class="fold" type="button" aria-expanded="true">收合</button>
+      <p class="eyebrow"><span>COLLAR · BELL</span><span>頸項</span></p>
+      <h2><span class="glitch" data-text="項圈繫鈴">項圈繫鈴</span></h2>
+      <div class="more">
+      <p class="lede">脖子上圍著一圈項圈，正中央掛著鈴鐺，兩側垂下綬帶。</p>
+      <p class="body">猛獸戴上項圈和鈴鐺，常被解讀成<strong>被馴服的獅子</strong>：保留威嚴，卻不傷人。綬帶與鈴鐺也讓整隻石獅多了幾分喜氣，這類裝飾在南獅身上特別常見。</p>
+      <dl class="spec">
+        <dt>位置</dt><dd>頸部正前方</dd>
+        <dt>元素</dt><dd>項圈、鈴鐺、綬帶</dd>
+        <dt>寓意</dt><dd>威嚴但溫順，帶來吉祥</dd>
+      </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="file" data-side="right" data-mark="繡球" data-mark-en="BALL">
+    <div class="panel">
+      <button class="fold" type="button" aria-expanded="true">收合</button>
+      <p class="eyebrow"><span>FOREPAW · BALL</span><span>前足</span></p>
+      <h2><span class="glitch" data-text="腳踏繡球">腳踏繡球</span></h2>
+      <div class="more">
+      <p class="lede">牠的前腳踩著一顆鏤空雕花的球。這是分辨公母最快的方法。</p>
+      <p class="body">腳踩<strong>繡球</strong>的是公獅，母獅腳下護著的則是一隻幼獅。宋代以後，石獅從兇猛漸漸變得親和，公獅戲球、母獅弄子的造型也跟著流行。從廟裡往外看是男左女右，所以你站在廟門口面向廟時，公獅在右手邊。</p>
+      <dl class="spec">
+        <dt>公獅</dt><dd>腳踩繡球</dd>
+        <dt>母獅</dt><dd>腳護幼獅</dd>
+        <dt>面向廟門</dt><dd>公獅在右，母獅在左</dd>
+      </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="file" data-side="left" data-mark="捲鬃" data-mark-en="MANE">
+    <div class="panel">
+      <button class="fold" type="button" aria-expanded="true">收合</button>
+      <p class="eyebrow"><span>HEAD · MANE</span><span>頭頂到頸後</span></p>
+      <h2><span class="glitch" data-text="一身捲鬃">一身捲鬃</span></h2>
+      <div class="more">
+      <p class="lede">轉到側面，頭頂到頸後排滿一顆顆螺旋捲毛，像一圈一圈的漩渦。</p>
+      <p class="body">每一顆捲毛都要沿著螺紋鑿出深淺不同的凹槽，在光線下才會立體。鬃毛是石獅最費工的部位之一，也是各地石匠<strong>風格差最多</strong>的地方：有的排得整齊，有的捲得奔放。</p>
+      <dl class="spec">
+        <dt>部位</dt><dd>頭頂、兩頰到頸後</dd>
+        <dt>造型</dt><dd>螺旋捲毛</dd>
+        <dt>怎麼看</dt><dd>從側面看，凹凸最清楚</dd>
+      </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="file" data-side="right" data-mark="獅尾" data-mark-en="TAIL">
+    <div class="panel">
+      <button class="fold" type="button" aria-expanded="true">收合</button>
+      <p class="eyebrow"><span>BACK · TAIL</span><span>背後</span></p>
+      <h2><span class="glitch" data-text="繞到背後">繞到背後</span></h2>
+      <div class="more">
+      <p class="lede">大多數人只看正面。繞到後面，才看得到分成好幾股、交纏貼在背上的大尾巴。</p>
+      <p class="body">中國石獅的尾巴多半順著背部捲起、貼伏在身上。日本神社前的狛犬也是從同一個源頭演變來的，尾巴卻常常<strong>高高翹起</strong>，這是兩者最好認的差別之一。</p>
+      <dl class="spec">
+        <dt>造型</dt><dd>多股捲曲，貼伏背上</dd>
+        <dt>對照</dt><dd>日本狛犬尾巴常上翹</dd>
+        <dt>下次</dt><dd>記得繞石獅走一圈</dd>
+      </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="file" data-side="left" data-mark="蓮花" data-mark-en="LOTUS RELIEF">
+    <div class="panel">
+      <button class="fold" type="button" aria-expanded="true">收合</button>
+      <p class="eyebrow"><span>PLINTH · RELIEF</span><span>底座</span></p>
+      <h2><span class="glitch" data-text="蓮花石座">蓮花石座</span></h2>
+      <div class="more">
+      <p class="lede">獅子坐在方形石座上。石座正面刻著一朵盛開的蓮花，兩旁捲草紋向外延伸。</p>
+      <p class="body">蓮花在佛教裡代表清淨，捲草紋則是一路連綿不斷的吉祥紋樣。石座把獅子抬高，讓牠在廟埕上更有份量，也替石匠多留一塊<strong>可以發揮的畫面</strong>。</p>
+      <dl class="spec">
+        <dt>形制</dt><dd>方形石座，上下兩層</dd>
+        <dt>紋飾</dt><dd>蓮花、捲草紋</dd>
+        <dt>作用</dt><dd>抬高、承重、展示雕工</dd>
+      </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="file" data-side="left">
+    <div class="panel">
+      <button class="fold" type="button" aria-expanded="true">收合</button>
+      <p class="eyebrow"><span>A PAIR AT THE GATE</span><span>一公一母</span></p>
+      <h2><span class="glitch" data-text="下次經過廟口">下次經過廟口</span></h2>
+      <div class="more">
+      <p class="lede">停下來看看牠的嘴、牠的腳，還有牠背後那條尾巴。</p>
+      <p class="body">一對石獅，一個踩球、一個護子，守著同一道門。每間廟的石獅都出自不同石匠之手，表情各有個性。認得這幾個地方，就讀得懂廟口這對<strong>門神獸</strong>。</p>
+      <p class="foot">內容為公開資料整理，各廟形制不一，引用前請再查證。</p>
+      </div>
+    </div>
+  </section>
+</main>
+<p class="note">TW·GUARDIAN 廟口石獅檔案</p>
+
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>

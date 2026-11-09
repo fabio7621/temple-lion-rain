@@ -1,0 +1,18 @@
+/* 窄螢幕與減少動態；必須最後載入 */
+@media (max-width:820px){
+  .file{padding-block:58vh 6vh}
+  .file[data-side="right"]{justify-content:flex-start}
+  .panel,.file[data-side="right"] .panel{margin:0;width:100%;background:linear-gradient(180deg,rgba(7,8,9,.4),rgba(7,8,9,.85) 40%)}
+  .cards-min .panel{width:100%}
+  .sound{bottom:auto;top:calc(16px + env(safe-area-inset-top,0px))}
+  .rail{top:auto;transform:none;bottom:auto;top:calc(70px + env(safe-area-inset-top,0px));gap:0}
+  .rail button{min-height:22px}
+  .rail .zh,.rail .en{display:none}
+  .rail button[aria-current="true"] .zh{display:inline;font-size:11px}
+  .rail .tick{width:8px}
+  .rail button[aria-current="true"] .tick{width:20px}
+  .reticle .tag b{font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain,.glitch::before,.glitch::after,.scroll-cue::before,.sound .bars i{animation:none!important}
+}
